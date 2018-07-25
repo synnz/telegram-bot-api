@@ -888,16 +888,16 @@ type CallbackConfig struct {
 // ChatMemberConfig contains information about a user in a chat for use
 // with administrative functions such as kicking or unbanning a user.
 type ChatMemberConfig struct {
-	ChatID             int64
-	SuperGroupUsername string
-	ChannelUsername    string
-	UserID             int
+	ChatID             int64  `json:"chat_id"`
+	SuperGroupUsername string `json:"super_group_username"`
+	ChannelUsername    string `json:"channel_username"`
+	UserID             int    `json:"user_id"`
 }
 
 // KickChatMemberConfig contains extra fields to kick user
 type KickChatMemberConfig struct {
-	ChatMemberConfig
-	UntilDate int64
+	ChatMemberConfig `json:"chat_member_config"`
+	UntilDate int64  `json:"until_date"`
 }
 
 // RestrictChatMemberConfig contains fields to restrict members of chat
